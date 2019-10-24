@@ -1,0 +1,20 @@
+<div class="container">
+
+    <form th:action="@{/menus}" method="post" th:object="${menuModel.menu}" id="menuForm">
+        <input type="hidden" name="id" th:value="*{id}">
+        <div class="form-group">
+            <label for="name" class="col-form-label">菜单名称</label>
+            <input type="text" class="form-control" id="name" name="name" th:value="*{name}" maxlength="20" placeholder="请输入菜单名称，至少2个字符，至多20个" >
+        </div><div class="form-group">
+            <label for="url" class="col-form-label">菜单Url</label>
+            <input type="text" class="form-control" id="url" name="url" th:value="*{url}" maxlength="20" placeholder="请输入菜单Url，如/users,/menus,roles" >
+        </div>
+        <div class="form-group ">
+            <label for="permissions" class="col-form-label">资源权限</label>
+            <input type="text" class="form-control" id="permissions" name="permissions"  th:value="*{permissions}" maxlength="50" placeholder="请输入资源权限，如/skill/users:read,/skill/role:read">
+        </div>
+
+    </form>
+
+</div>
+<!-- /.container -->

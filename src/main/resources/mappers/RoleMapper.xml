@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.RoleMapper">
+
+    <resultMap id="BaseResultMap" type="wjx.skill.model.Role">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="role_name" property="roleName" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, role_name,create_time
+    </sql>
+    <!--根据userId查询roles-->
+    <select id="getByUserId" resultMap="BaseResultMap">
+        select sr.id as id,sr.role_name as role_name FROM`user_role` ur left JOIN  `skill_role` sr on ur.role_id=sr.id where ur.user_id = #{userId}
+    </select>
+
+    <select id="getRolesByUserId" resultType="java.lang.Integer">
+        select sr.id AS id FROM`user_role` ur left JOIN  `skill_role` sr on ur.role_id=sr.id where ur.user_id = #{userId}
+    </select>
+
+
+    <select id="getRoles" resultMap="BaseResultMap">
+        select * FROM`skill_role`
+    </select>
+    <select id="getRoleById" resultMap="BaseResultMap">
+        select * FROM`skill_role` WHERE id = #{id}
+    </select>
+
+
+    <!--根据id查询roleName-->
+    <select id="findRoleByUserId" resultType="java.lang.String">
+        select sr.role_name as role_name FROM`user_role` ur left JOIN  `skill_role` sr on ur.role_id=sr.id where ur.user_id = #{userId}
+    </select>
+
+    <!--分页查询-->
+    <select id="listRolesByNameLike" resultMap="BaseResultMap">
+        select * FROM `skill_role` WHERE role_name &lt;&gt; "普通用户"
+        <if test="roleName != null and roleName !='' ">
+            AND role_name like concat('%', #{roleName}, '%')
+        </if>
+        ORDER BY create_time DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+
+    <!--获取总数-->
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(0) FROM `skill_role` WHERE role_name &lt;&gt; "普通用户"
+        <if test="roleName != null and roleName !='' ">
+            AND role_name like concat('%', #{roleName}, '%')
+        </if>
+    </select>
+
+    <delete id="removeRole" parameterType="java.lang.Integer">
+        DELETE FROM `skill_role` WHERE id = #{id}
+    </delete>
+    <delete id="removeRoleUser" parameterType="java.lang.Integer">
+        DELETE FROM `user_role` WHERE role_id = #{id}
+    </delete>
+
+    <delete id="removeResources" parameterType="java.lang.Integer">
+        DELETE FROM `role_resources` WHERE role_id = #{id}
+    </delete>
+    <insert id="saveRoleResources">
+        INSERT INTO `role_resources`(role_id,resources_id,create_time)
+        VALUES
+        <foreach collection="permissions" item="info" separator=",">
+            (#{roleId},#{info},now())
+        </foreach>
+    </insert>
+    <insert id="saveRole" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO `skill_role`(role_name,create_time)
+        VALUES(#{roleName},now())
+    </insert>
+    <select id="findByRoleName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM `skill_role` WHERE role_name = #{roleName}
+    </select>
+    <select id="queryAll" resultType="java.lang.String">
+        SELECT permissions FROM `skill_resources`
+    </select>
+
+    <select id="findResourcesByRoleIds" resultType="java.lang.String">
+        SELECT sr.permissions as permissions FROM `skill_resources` sr
+        LEFT JOIN `role_resources` rr ON rr.resources_id = sr.id
+        WHERE rr.role_id IN
+        <foreach collection="roleIds" item="info" separator="," open="(" close=")">
+            #{info}
+        </foreach>
+    </select>
+</mapper>

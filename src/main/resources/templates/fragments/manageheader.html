@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      data-th-fragment="header"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <!--
+        <title th:text="${userModel.title}">Thymeleaf in action</title>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--  &lt;!&ndash; CSRF &ndash;&gt;
+      <meta name="_csrf" th:content="${_csrf.token}"/>
+
+      &lt;!&ndash; default header name is X-CSRF-TOKEN &ndash;&gt;
+      <meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+
+    <!-- Tether core CSS -->
+    <link href="../../css/tether.min.css" th:href="@{/css/tether.min.css}" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Font-Awesome CSS -->
+    <link href="../../css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet">
+
+    <!-- NProgress CSS -->
+    <link href="../../css/nprogress.css" th:href="@{/css/nprogress.css}" rel="stylesheet">
+
+    <!-- thinker-md CSS -->
+    <link href="../../css/thinker-md.vendor.css" th:href="@{/css/thinker-md.vendor.css}" rel="stylesheet">
+
+    <!-- bootstrap tags CSS -->
+    <link href="../../css/bootstrap-tagsinput.css" th:href="@{/css/jquery.tagsinput.min.css}" rel="stylesheet">
+
+    <!-- bootstrap chosen CSS -->
+    <link href="../../css/component-chosen.min.css" th:href="@{/css/component-chosen.min.css}" rel="stylesheet">
+
+    <!-- toastr CSS -->
+    <link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}" rel="stylesheet">
+
+    <!-- jQuery image cropping plugin CSS -->
+    <link href="../../css/cropbox.css" th:href="@{/css/cropbox.css}" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="../../css/thymeleaf-bootstrap-paginator.css" th:href="@{/css/thymeleaf-bootstrap-paginator.css}"
+          rel="stylesheet">
+    <link href="../../css/blog.css" th:href="@{/css/blog.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- 最外层的**nav**标签,表明这是一个导航栏(navBar) -->
+<nav class="navbar navbar-inverse bg-inverse  navbar-toggleable-md">
+    <!-- 导航栏中有一个button来控制菜单的隐藏和显示(toggle)-->
+    <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse"
+            data-target="#navbarsContainer" aria-controls="navbarsExampleContainer" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <!-- 按钮的图标-->
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container">
+        <a class="navbar-brand" href="/" th:href="@{~/}">TechnologyPlatform</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsContainer">
+
+            <div shiro:authenticated="" class="row">
+                <div class="dropdown">
+                    <span id="uAvatar" hidden="true"><shiro:principal property="avatar"/></span>
+                    <span id="uSelf" hidden="true"><shiro:principal property="username"/></span>
+                    <div id="dropdownMenu1">
+                        <a class=" dropdown-toggle card-link" href="javascript:void(0)" data-toggle="dropdown">
+                            <shiro:principal property="username"/>
+                        </a>
+                        <img id="uImg" class="blog-avatar blog-avatar-50">
+                    </div>
+                    <div class="dropdown-menu" id="dropDownCur">
+                        <a class=" dropdown-item" href="javascript:void(0)" id="faWenZhang">发文章</a>
+                        <shiro:hasPermission name='/skill/manager:read'>
+                            <a class="dropdown-item" href="/admins">后台管理</a>
+                        </shiro:hasPermission>
+                        <a class=" dropdown-item" href="javascript:void(0)" id="u">个人主页</a>
+                        <a class="dropdown-item" href="javascript:void(0)" id="uProfile">个人设置</a>
+                        <a class="dropdown-item" href="/logout" th:href="@{/logout}">退出</a>
+                    </div>
+                </div>
+
+            </div>
+            <div shiro:notAuthenticated="">
+                <div>
+                    <a href="/login" class="btn btn-outline-success my-2 my-sm-0">登录</a>
+                    <a href="/register" class="btn btn-outline-success my-2 my-sm-0">注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

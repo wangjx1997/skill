@@ -1,0 +1,28 @@
+{
+  "empty": false,
+  "model": {
+    "userModel": {
+      "user": {
+        "accountNonExpired": true,
+        "accountNonLocked": true,
+        "authorities": [
+          {
+            "id": 1
+          }
+        ],
+        "credentialsNonExpired": true,
+        "email": "1194622740@qq.com",
+        "enabled": true,
+        "id": 1,
+        "name": "wjx",
+        "password": "$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVKIUi",
+        "username": "admin"
+      }
+    }
+  },
+  "modelMap": {
+    "$ref": "$.model"
+  },
+  "reference": true,
+  "viewName": "users/edit"
+}

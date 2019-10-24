@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.ResourcesMapper">
+
+    <resultMap id="BaseResultMap" type="wjx.skill.model.Resources">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="INTEGER"/>
+        <result column="pid" property="pid" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="permissions" property="permissions" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--分页查询-->
+    <select id="listResourcesByNameLike" resultMap="BaseResultMap">
+        select * FROM `skill_resources`
+        <where>
+            <if test="name != null and name !='' ">
+                name like concat('%', #{name}, '%')
+            </if>
+        </where>
+        ORDER BY create_time DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+    <select id="listResources" resultMap="BaseResultMap">
+        select * FROM `skill_resources`
+    </select>
+
+    <select id="getResourcesByRoleId" resultType="java.lang.Integer">
+        select sr.id as id FROM `skill_resources` sr LEFT JOIN `role_resources` rr ON rr.resources_id = sr.id WHERE rr.role_id=#{roleId}
+    </select>
+
+
+
+    <!--获取总数-->
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(0) FROM `skill_resources`
+        <where>
+            <if test="name != null and name !='' ">
+                name like concat('%', #{name}, '%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="saveResources" parameterType="wjx.skill.model.Resources" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO `skill_resources`(name,permissions,create_time) VALUES(#{name},#{permissions},now())
+    </insert>
+
+    <select id="findByPermissions" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT * FROM `skill_resources` WHERE permissions = #{permissions}
+    </select>
+    <select id="getResourcesById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT * FROM `skill_resources` WHERE id = #{id}
+    </select>
+    <update id="updateResources" parameterType="wjx.skill.model.Resources">
+        UPDATE `skill_resources`
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="permissions != null">
+                permissions = #{permissions}
+            </if>
+        </set>
+         WHERE id = #{id}
+    </update>
+    <delete id="removeResources" parameterType="java.lang.Integer">
+        DELETE FROM `skill_resources` WHERE id = #{id}
+    </delete>
+
+    <delete id="removeRoleResources" parameterType="java.lang.Integer">
+        DELETE FROM `role_resources` WHERE resources_id = #{id}
+    </delete>
+</mapper>

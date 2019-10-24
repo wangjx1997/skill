@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.CatalogMapper">
+    <resultMap id="BaseResultMap" type="wjx.skill.model.Catalog">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="user_id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!--添加分类-->
+    <insert id="saveCatalog" useGeneratedKeys="true" keyProperty="id" parameterType="wjx.skill.model.Catalog">
+    insert into skill_catalog (user_id, name,create_time)
+    values (#{user_id}, #{name},now())
+  </insert>
+    <!--根据分类id获取-->
+    <select id="getCatalogById" resultMap="BaseResultMap">
+    select * FROM`skill_catalog` where id = #{id}
+  </select>
+    <!--根据用户id获取-->
+    <select id="listCatalogs" resultMap="BaseResultMap">
+    select * FROM`skill_catalog` where user_id = #{userId}
+  </select>
+    <!--根据用户id和分类名获取获取 判断用户是否存在该分类-->
+    <select id="findByUserIdAndName" resultMap="BaseResultMap">
+    select * FROM`skill_catalog` where user_id = #{userId} and name = #{catalogName}
+  </select>
+    <!--删除评论-->
+    <delete id="removeCatalog" parameterType="java.lang.Integer">
+        DELETE FROM `skill_catalog` WHERE id = #{id}
+    </delete>
+    <update id="updateCatalog" parameterType="wjx.skill.model.Catalog">
+      UPDATE `skill_catalog` SET name = #{name} WHERE id = #{id}
+    </update>
+</mapper>

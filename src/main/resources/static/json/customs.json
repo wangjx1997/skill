@@ -1,0 +1,5661 @@
+[
+  {
+    "code": 0,
+    "message": "接口请求成功",
+    "data": {
+      "custom_field_templates": [],
+      "custom_columns": [
+        {
+          "name": "name",
+          "label": "客户名称",
+          "origin_label": "客户名称",
+          "field_type": "text_field",
+          "default": true,
+          "link": true,
+          "link_target": "_blank",
+          "want_sort_field": "name_pinyin"
+        },
+        {
+          "name": "category_mapped",
+          "label": "客户类型",
+          "origin_label": "客户类型",
+          "field_type": "field_map_field",
+          "default": true,
+          "want_sort_field": null
+        },
+        {
+          "name": "contacts",
+          "label": "联系人",
+          "origin_label": "联系人",
+          "field_type": "text_field",
+          "default": true,
+          "value_format": "pop_lastest_contact",
+          "want_sort_field": null
+        },
+        {
+          "name": "status_mapped",
+          "label": "跟进状态",
+          "origin_label": "跟进状态",
+          "field_type": "field_map_field",
+          "default": true,
+          "want_sort_field": null
+        },
+        {
+          "name": "lastest_revisit_log.content",
+          "label": "最新跟进记录",
+          "origin_label": "最新跟进记录",
+          "field_type": "text_area",
+          "default": true,
+          "value_format": "lastest_revisit_log_content",
+          "want_sort_field": null
+        },
+        {
+          "name": "real_revisit_at",
+          "label": "实际跟进时间",
+          "origin_label": "实际跟进时间",
+          "field_type": "datetime_field",
+          "default": true,
+          "value_format": "datetime",
+          "want_sort_field": "real_revisit_at"
+        },
+        {
+          "name": "revisit_remind_at",
+          "label": "下次跟进时间",
+          "origin_label": "下次跟进时间",
+          "field_type": "datetime_field",
+          "default": true,
+          "value_format": "revisit_remind_at",
+          "want_sort_field": "revisit_remind_at"
+        }
+      ],
+      "filter_columns": [
+        {
+          "name": "name_pinyin",
+          "label": "首字母筛选",
+          "filter_format": "link",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "#",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "non_start_with",
+                    "query": "#"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "A",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "a"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "B",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "b"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "C",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "c"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "D",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "d"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "E",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "e"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "F",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "f"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "G",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "g"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "H",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "h"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "I",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "i"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "J",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "j"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "K",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "k"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "L",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "l"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "M",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "m"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "N",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "n"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "O",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "o"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "P",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "p"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "Q",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "q"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "R",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "r"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "S",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "s"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "T",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "t"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "U",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "u"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "V",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "v"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "W",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "w"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "X",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "x"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "Y",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "y"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "Z",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "name_pinyin",
+                    "operator": "start_with",
+                    "query": "z"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "status",
+          "default": true,
+          "filter_format": "link",
+          "label": "跟进状态",
+          "custom_column_option_name": "status_mapped",
+          "status": "1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "初访",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "equal",
+                    "query": "9298667"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "意向",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "equal",
+                    "query": "9298668"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "报价",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "equal",
+                    "query": "9298669"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "成交",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "equal",
+                    "query": "9298670"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "暂时搁置",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "equal",
+                    "query": "9298671"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "未成交",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "status",
+                    "operator": "ne",
+                    "query": "9298670"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "category",
+          "default": true,
+          "filter_format": "link",
+          "label": "客户类型",
+          "custom_column_option_name": "category_mapped",
+          "status": "1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "A(重要客户)",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "category",
+                    "operator": "equal",
+                    "query": "9298672"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "B(普通客户)",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "category",
+                    "operator": "equal",
+                    "query": "9298673"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "C(低价值客户)",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "category",
+                    "operator": "equal",
+                    "query": "9298674"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "address.region_info",
+          "filter_format": "address_select",
+          "label": "地区",
+          "custom_column_option_name": "address.region_info",
+          "status": "1",
+          "is_show": true
+        },
+        {
+          "name": "source",
+          "filter_format": "link",
+          "label": "客户来源",
+          "custom_column_option_name": "source_mapped",
+          "status": "1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "电话营销",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298675"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "微信营销",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298676"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "客户转介绍",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298677"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "朋友介绍",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298678"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "银行介绍",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298679"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "其他",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298680"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "公司分配",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298681"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "社交推广",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "source",
+                    "operator": "equal",
+                    "query": "9298682"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "industry",
+          "filter_format": "link",
+          "label": "所属行业",
+          "custom_column_option_name": "industry_mapped",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "服务",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298683"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "金融",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298684"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "电信",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298685"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "教育",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298686"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "高科技",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298687"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "政府",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298688"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "制造",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298689"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "能源",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298690"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "零售",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298691"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "媒体",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298692"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "娱乐",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298693"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "咨询",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298694"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "非盈利事业",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298695"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "公用事业",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "industry",
+                    "operator": "equal",
+                    "query": "9298696"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "staff_size",
+          "filter_format": "link",
+          "label": "人员规模",
+          "custom_column_option_name": "staff_size_mapped",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "<10人",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298697"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "10-20人",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298698"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "20-50人",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298699"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "50-100人",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298700"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "100-500人",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298701"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "500人以上",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "staff_size",
+                    "operator": "equal",
+                    "query": "9298702"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "channel",
+          "filter_format": "link",
+          "label": "渠道",
+          "custom_column_option_name": "channel_mapped",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "无",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "channel",
+                    "operator": "equal",
+                    "query": "9298703"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "微信",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "channel",
+                    "operator": "equal",
+                    "query": "9298704"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "QQ",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "channel",
+                    "operator": "equal",
+                    "query": "9298705"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "微博",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "channel",
+                    "operator": "equal",
+                    "query": "9298706"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "百度",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "channel",
+                    "operator": "equal",
+                    "query": "9298707"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "sold_products",
+          "filter_format": "select2",
+          "label": "已成交产品",
+          "custom_column_option_name": "sold_products",
+          "status": "1",
+          "is_show": true
+        },
+        {
+          "name": "real_revisit_at",
+          "filter_format": "time",
+          "label": "实际跟进时间",
+          "custom_column_option_name": "real_revisit_at",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "今天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "today_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "昨天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "yesterday_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "this_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "last_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "this_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "real_revisit_at",
+                    "operator": "within",
+                    "query": "last_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "revisit_remind_at",
+          "filter_format": "time",
+          "label": "下次跟进时间",
+          "custom_column_option_name": "revisit_remind_at",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "无",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "eq",
+                    "query": "null"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "今天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "today_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "明天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "tomorrow_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "this_week_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "下周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "next_week_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "this_month_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "下月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "revisit_remind_at",
+                    "operator": "within",
+                    "query": "next_month_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "created_at",
+          "filter_format": "time",
+          "label": "创建时间",
+          "custom_column_option_name": "created_at",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "今天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "today_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "昨天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "yesterday_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "this_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "last_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "this_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "created_at",
+                    "operator": "within",
+                    "query": "last_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "creator",
+          "label": "创建人",
+          "filter_format": "creator",
+          "custom_column_option_name": "creator.name",
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "name": "updated_at",
+          "filter_format": "time",
+          "label": "更新于",
+          "custom_column_option_name": "updated_at",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "今天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "today_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "昨天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "yesterday_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "this_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "last_week_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "this_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "上月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "updated_at",
+                    "operator": "within",
+                    "query": "last_month_ago"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "name": "assist_user",
+          "label": "协作人",
+          "filter_format": "assist_user",
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "name": "owned_department",
+          "default": true,
+          "label": "所属部门",
+          "filter_format": "department",
+          "custom_column_option_name": "owned_department.name",
+          "status": "1",
+          "is_show": true
+        },
+        {
+          "name": "user",
+          "default": true,
+          "label": "负责人",
+          "filter_format": "user",
+          "custom_column_option_name": "user.name",
+          "status": "1",
+          "is_show": true
+        },
+        {
+          "name": "before_user",
+          "label": "前负责人",
+          "filter_format": "before_user",
+          "custom_column_option_name": "before_user.name",
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "name": "before_customer_common_setting",
+          "label": "所属公海",
+          "filter_format": "before_customer_common_setting",
+          "custom_column_option_name": "before_customer_common_setting.name",
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "name": "will_flow_time",
+          "label": "划入公海时间",
+          "filter_format": "time",
+          "custom_column_option_name": "will_flow_time",
+          "status": "-1",
+          "links": [
+            {
+              "name": "全部",
+              "conds": {},
+              "default_link": true
+            },
+            {
+              "name": "无",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "eq",
+                    "query": "null"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "今天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "today_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "明天",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "tomorrow_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "this_week_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "下周",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "next_week_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "本月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "this_month_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            },
+            {
+              "name": "下月",
+              "conds": {
+                "filters": [
+                  {
+                    "name": "will_flow_time",
+                    "operator": "within",
+                    "query": "next_month_after"
+                  }
+                ],
+                "type": "advance"
+              }
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "datetime_asset_loan_demand_at",
+          "name": "datetime_asset_loan_demand_at",
+          "label": "贷款需求时间",
+          "filter_format": "time",
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "links": [
+            {
+              "value": "",
+              "label": "不限",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "today_ago",
+              "label": "今天",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "yesterday_ago",
+              "label": "昨天",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "this_week_ago",
+              "label": "本周",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "last_week_ago",
+              "label": "上周",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "this_month_ago",
+              "label": "本月",
+              "name": "datetime_asset_loan_demand_at"
+            },
+            {
+              "value": "last_month_ago",
+              "label": "上月",
+              "name": "datetime_asset_loan_demand_at"
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "datetime_asset_interview_appointment",
+          "name": "datetime_asset_interview_appointment",
+          "label": "预约面谈时间",
+          "filter_format": "time",
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "links": [
+            {
+              "value": "",
+              "label": "不限",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "today_ago",
+              "label": "今天",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "yesterday_ago",
+              "label": "昨天",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "this_week_ago",
+              "label": "本周",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "last_week_ago",
+              "label": "上周",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "this_month_ago",
+              "label": "本月",
+              "name": "datetime_asset_interview_appointment"
+            },
+            {
+              "value": "last_month_ago",
+              "label": "上月",
+              "name": "datetime_asset_interview_appointment"
+            }
+          ],
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "text_asset_personal_profile_display",
+          "name": "text_asset_personal_profile",
+          "label": "个人概况",
+          "filter_format": "custom_field_multi_select",
+          "custom_field": {
+            "id": 22800518,
+            "name": "text_asset_personal_profile",
+            "label": "个人概况",
+            "origin_label": "个人概况",
+            "field_type": "multi_select",
+            "category": "common",
+            "position": 1,
+            "label_html_options": {},
+            "input_html_options": {
+              "data": {
+                "closeOnSelect": false
+              },
+              "multiple": true
+            },
+            "status": "enable",
+            "required": false,
+            "is_special_column": false,
+            "is_user_custom_column": true,
+            "organization_id": 11514812,
+            "created_at": "2019-07-05T10:25:07.000+08:00",
+            "updated_at": "2019-07-05T10:25:07.000+08:00",
+            "exclude_place": [],
+            "custom_field_setting_id": 1064438,
+            "custom_field_group_id": 3294940,
+            "options": {
+              "custom_column_name": "text_asset_personal_profile_display",
+              "select_options": [
+                [
+                  "自建房",
+                  "mul_a000"
+                ],
+                [
+                  "有执照",
+                  "mul_b000"
+                ],
+                [
+                  "有国税",
+                  "mul_c000"
+                ],
+                [
+                  "有公积金",
+                  "mul_d000"
+                ],
+                [
+                  "有社保/代发",
+                  "mul_e000"
+                ],
+                [
+                  "按揭房月供",
+                  "mul_f000"
+                ],
+                [
+                  "抵押房月供",
+                  "mul_g000"
+                ],
+                [
+                  "有多套房",
+                  "mul_h000"
+                ],
+                [
+                  "全款房",
+                  "mul_i000"
+                ],
+                [
+                  "按揭房",
+                  "mul_j000"
+                ],
+                [
+                  "有多辆车",
+                  "mul_k000"
+                ],
+                [
+                  "全款车",
+                  "mul_l000"
+                ],
+                [
+                  "月供车",
+                  "mul_m000"
+                ],
+                [
+                  "有高额保单",
+                  "mul_n000"
+                ],
+                [
+                  "有保单",
+                  "mul_o000"
+                ],
+                [
+                  "有流水",
+                  "mul_p000"
+                ],
+                [
+                  "结息大",
+                  "mul_q000"
+                ]
+              ]
+            },
+            "field_update_options": {
+              "base_columns_readonly": true
+            },
+            "meta_custom_field_id": 284
+          },
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "text_asset_income_profile_display",
+          "name": "text_asset_income_profile",
+          "label": "收入概况",
+          "filter_format": "custom_field_select",
+          "custom_field": {
+            "id": 22800519,
+            "name": "text_asset_income_profile",
+            "label": "收入概况",
+            "origin_label": "收入概况",
+            "field_type": "select",
+            "category": "common",
+            "position": 2,
+            "label_html_options": {},
+            "input_html_options": {
+              "data": {}
+            },
+            "status": "enable",
+            "required": false,
+            "is_special_column": false,
+            "is_user_custom_column": true,
+            "organization_id": 11514812,
+            "created_at": "2019-07-05T10:25:07.000+08:00",
+            "updated_at": "2019-07-05T10:25:07.000+08:00",
+            "exclude_place": [],
+            "custom_field_setting_id": 1064438,
+            "custom_field_group_id": 3294940,
+            "options": {
+              "custom_column_name": "text_asset_income_profile_display",
+              "select_options": [
+                [
+                  "未填写",
+                  "sel_a000"
+                ],
+                [
+                  "标准自雇",
+                  "sel_b000"
+                ],
+                [
+                  "普通自雇",
+                  "sel_c000"
+                ],
+                [
+                  "优良职业",
+                  "sel_d000"
+                ],
+                [
+                  "标准受薪",
+                  "sel_e000"
+                ],
+                [
+                  "普通受薪",
+                  "sel_f000"
+                ],
+                [
+                  "自由职业",
+                  "sel_g000"
+                ],
+                [
+                  "家庭主妇",
+                  "sel_h000"
+                ],
+                [
+                  "无业",
+                  "sel_i000"
+                ]
+              ]
+            },
+            "field_update_options": {
+              "base_columns_readonly": true
+            },
+            "meta_custom_field_id": 285
+          },
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "text_asset_census_register_display",
+          "name": "text_asset_census_register",
+          "label": "户籍概况",
+          "filter_format": "custom_field_select",
+          "custom_field": {
+            "id": 22800520,
+            "name": "text_asset_census_register",
+            "label": "户籍概况",
+            "origin_label": "户籍概况",
+            "field_type": "select",
+            "category": "common",
+            "position": 3,
+            "label_html_options": {},
+            "input_html_options": {
+              "data": {}
+            },
+            "status": "enable",
+            "required": false,
+            "is_special_column": false,
+            "is_user_custom_column": true,
+            "organization_id": 11514812,
+            "created_at": "2019-07-05T10:25:07.000+08:00",
+            "updated_at": "2019-07-05T10:25:07.000+08:00",
+            "exclude_place": [],
+            "custom_field_setting_id": 1064438,
+            "custom_field_group_id": 3294940,
+            "options": {
+              "custom_column_name": "text_asset_census_register_display",
+              "select_options": [
+                [
+                  "未了解",
+                  "sel_a000"
+                ],
+                [
+                  "本地",
+                  "sel_b000"
+                ],
+                [
+                  "本省",
+                  "sel_c000"
+                ],
+                [
+                  "外省",
+                  "sel_d000"
+                ],
+                [
+                  "其他",
+                  "sel_e000"
+                ]
+              ]
+            },
+            "field_update_options": {
+              "base_columns_readonly": true
+            },
+            "meta_custom_field_id": 286
+          },
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "is_show": true
+        },
+        {
+          "custom_column_option_name": "text_asset_marriage_profile_display",
+          "name": "text_asset_marriage_profile",
+          "label": "婚姻概况",
+          "filter_format": "custom_field_select",
+          "custom_field": {
+            "id": 22800521,
+            "name": "text_asset_marriage_profile",
+            "label": "婚姻概况",
+            "origin_label": "婚姻概况",
+            "field_type": "select",
+            "category": "common",
+            "position": 4,
+            "label_html_options": {},
+            "input_html_options": {
+              "data": {}
+            },
+            "status": "enable",
+            "required": false,
+            "is_special_column": false,
+            "is_user_custom_column": true,
+            "organization_id": 11514812,
+            "created_at": "2019-07-05T10:25:07.000+08:00",
+            "updated_at": "2019-07-05T10:25:07.000+08:00",
+            "exclude_place": [],
+            "custom_field_setting_id": 1064438,
+            "custom_field_group_id": 3294940,
+            "options": {
+              "custom_column_name": "text_asset_marriage_profile_display",
+              "select_options": [
+                [
+                  "未了解",
+                  "sel_a000"
+                ],
+                [
+                  "已婚支持贷款",
+                  "sel_b000"
+                ],
+                [
+                  "已婚不支持贷款",
+                  "sel_c000"
+                ],
+                [
+                  "离异",
+                  "sel_d000"
+                ],
+                [
+                  "未婚",
+                  "sel_e000"
+                ],
+                [
+                  "丧偶",
+                  "sel_f000"
+                ],
+                [
+                  "其他",
+                  "sel_g000"
+                ]
+              ]
+            },
+            "field_update_options": {
+              "base_columns_readonly": true
+            },
+            "meta_custom_field_id": 287
+          },
+          "filter_user_custom_field": true,
+          "status": "-1",
+          "is_show": true
+        }
+      ],
+      "table_settings": {
+        "col_styles": [
+          {
+            "column": "name",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "category_mapped",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "contacts",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "status_mapped",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "lastest_revisit_log.content",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "real_revisit_at",
+            "col_style": "width: 185px"
+          },
+          {
+            "column": "revisit_remind_at",
+            "col_style": "width: 185px"
+          }
+        ]
+      },
+      "custom_fields_by_group": [
+        {
+          "id": 3294937,
+          "label": "基本信息",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 1,
+          "custom_fields": [
+            {
+              "id": 22800493,
+              "name": "name",
+              "label": "客户名称",
+              "field_type": "text_field",
+              "category": "common",
+              "position": 1,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800495,
+              "name": "company_name",
+              "label": "公司名称",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "company_name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800496,
+              "name": "category",
+              "label": "客户类型",
+              "field_type": "field_map_field",
+              "category": "common",
+              "position": 4,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "category_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "A(重要客户)",
+                    "value": 9298672
+                  },
+                  {
+                    "label": "B(普通客户)",
+                    "value": 9298673
+                  },
+                  {
+                    "label": "C(低价值客户)",
+                    "value": 9298674
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            },
+            {
+              "id": 22800497,
+              "name": "source",
+              "label": "客户来源",
+              "field_type": "field_map_field",
+              "category": "uncommon",
+              "position": 5,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "source_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "电话营销",
+                    "value": 9298675
+                  },
+                  {
+                    "label": "微信营销",
+                    "value": 9298676
+                  },
+                  {
+                    "label": "客户转介绍",
+                    "value": 9298677
+                  },
+                  {
+                    "label": "朋友介绍",
+                    "value": 9298678
+                  },
+                  {
+                    "label": "银行介绍",
+                    "value": 9298679
+                  },
+                  {
+                    "label": "其他",
+                    "value": 9298680
+                  },
+                  {
+                    "label": "公司分配",
+                    "value": 9298681
+                  },
+                  {
+                    "label": "社交推广",
+                    "value": 9298682
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            },
+            {
+              "id": 22800498,
+              "name": "parent",
+              "label": "上级客户",
+              "field_type": "select2_field",
+              "category": "uncommon",
+              "position": 6,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "parent.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800499,
+              "name": "text_asset_loan_amount_required",
+              "label": "贷款需求金额",
+              "field_type": "text_field",
+              "category": "common",
+              "position": 7,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_loan_amount_required",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800500,
+              "name": "datetime_asset_loan_demand_at",
+              "label": "贷款需求时间",
+              "field_type": "datetime_field",
+              "category": "common",
+              "position": 8,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "datetime_asset_loan_demand_at",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "datetime_field"
+            },
+            {
+              "id": 22800501,
+              "name": "text_area_loan_debt",
+              "label": "贷款负债",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 9,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_loan_debt",
+              "input_field_options": {},
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800502,
+              "name": "text_area_credit_card_debt",
+              "label": "信用卡负债",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 10,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_credit_card_debt",
+              "input_field_options": {},
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294937,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            }
+          ]
+        },
+        {
+          "id": 3294938,
+          "label": "联系信息",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 2,
+          "custom_fields": [
+            {
+              "id": 22800504,
+              "name": "address.tel",
+              "label": "电话",
+              "field_type": "tel_field",
+              "category": "common",
+              "position": 2,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.tel",
+              "input_field_options": {
+                "format": "regular"
+              },
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "tel_field"
+            },
+            {
+              "id": 22800505,
+              "name": "address.phone",
+              "label": "手机",
+              "field_type": "mobile_field",
+              "category": "uncommon",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.phone",
+              "input_field_options": {
+                "format": "regular"
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "mobile_field"
+            },
+            {
+              "id": 22800506,
+              "name": "address.wechat",
+              "label": "微信号",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 4,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.wechat",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800507,
+              "name": "address.qq",
+              "label": "QQ号",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 5,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.qq",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800508,
+              "name": "address.wangwang",
+              "label": "旺旺号",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 6,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.wangwang",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800509,
+              "name": "address.email",
+              "label": "邮箱",
+              "field_type": "email_field",
+              "category": "uncommon",
+              "position": 7,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.email",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "email_field"
+            },
+            {
+              "id": 22800510,
+              "name": "address.fax",
+              "label": "传真",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 8,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.fax",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            },
+            {
+              "id": 22800511,
+              "name": "address.url",
+              "label": "网址",
+              "field_type": "url_field",
+              "category": "uncommon",
+              "position": 9,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.url",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "url_field"
+            },
+            {
+              "id": 22800512,
+              "name": "address.region_info",
+              "label": "地区",
+              "field_type": "address_select",
+              "category": "uncommon",
+              "position": 10,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.region_info",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "address_select"
+            },
+            {
+              "id": 22800513,
+              "name": "address.detail_address",
+              "label": "地址",
+              "field_type": "geo_address_field",
+              "category": "uncommon",
+              "position": 11,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.detail_address",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "geo_address_field"
+            },
+            {
+              "id": 22800514,
+              "name": "address.zip",
+              "label": "邮编",
+              "field_type": "text_field",
+              "category": "uncommon",
+              "position": 12,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "address.zip",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294938,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            }
+          ]
+        },
+        {
+          "id": 3294939,
+          "label": "面谈信息",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 3,
+          "custom_fields": [
+            {
+              "id": 22800515,
+              "name": "datetime_asset_interview_appointment",
+              "label": "预约面谈时间",
+              "field_type": "datetime_field",
+              "category": "common",
+              "position": 1,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "datetime_asset_interview_appointment",
+              "input_field_options": {},
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294939,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "datetime_field"
+            },
+            {
+              "id": 22800516,
+              "name": "text_area_interview_feedback",
+              "label": "面谈反馈",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 2,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_interview_feedback",
+              "input_field_options": {},
+              "status": "enable",
+              "required": true,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294939,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800517,
+              "name": "file_asset_interview_form_upload",
+              "label": "面谈表上传",
+              "field_type": "file_field",
+              "category": "common",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "file_asset_interview_form_upload",
+              "input_field_options": {
+                "max": 9
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294939,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "image_field"
+            }
+          ]
+        },
+        {
+          "id": 3294940,
+          "label": "条件概况",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 4,
+          "custom_fields": [
+            {
+              "id": 22800518,
+              "name": "text_asset_personal_profile",
+              "label": "个人概况",
+              "field_type": "multi_select",
+              "category": "common",
+              "position": 1,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_personal_profile_display",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "自建房",
+                    "value": "mul_a000"
+                  },
+                  {
+                    "label": "有执照",
+                    "value": "mul_b000"
+                  },
+                  {
+                    "label": "有国税",
+                    "value": "mul_c000"
+                  },
+                  {
+                    "label": "有公积金",
+                    "value": "mul_d000"
+                  },
+                  {
+                    "label": "有社保/代发",
+                    "value": "mul_e000"
+                  },
+                  {
+                    "label": "按揭房月供",
+                    "value": "mul_f000"
+                  },
+                  {
+                    "label": "抵押房月供",
+                    "value": "mul_g000"
+                  },
+                  {
+                    "label": "有多套房",
+                    "value": "mul_h000"
+                  },
+                  {
+                    "label": "全款房",
+                    "value": "mul_i000"
+                  },
+                  {
+                    "label": "按揭房",
+                    "value": "mul_j000"
+                  },
+                  {
+                    "label": "有多辆车",
+                    "value": "mul_k000"
+                  },
+                  {
+                    "label": "全款车",
+                    "value": "mul_l000"
+                  },
+                  {
+                    "label": "月供车",
+                    "value": "mul_m000"
+                  },
+                  {
+                    "label": "有高额保单",
+                    "value": "mul_n000"
+                  },
+                  {
+                    "label": "有保单",
+                    "value": "mul_o000"
+                  },
+                  {
+                    "label": "有流水",
+                    "value": "mul_p000"
+                  },
+                  {
+                    "label": "结息大",
+                    "value": "mul_q000"
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "multi_select"
+            },
+            {
+              "id": 22800519,
+              "name": "text_asset_income_profile",
+              "label": "收入概况",
+              "field_type": "select",
+              "category": "common",
+              "position": 2,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_income_profile_display",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "未填写",
+                    "value": "sel_a000"
+                  },
+                  {
+                    "label": "标准自雇",
+                    "value": "sel_b000"
+                  },
+                  {
+                    "label": "普通自雇",
+                    "value": "sel_c000"
+                  },
+                  {
+                    "label": "优良职业",
+                    "value": "sel_d000"
+                  },
+                  {
+                    "label": "标准受薪",
+                    "value": "sel_e000"
+                  },
+                  {
+                    "label": "普通受薪",
+                    "value": "sel_f000"
+                  },
+                  {
+                    "label": "自由职业",
+                    "value": "sel_g000"
+                  },
+                  {
+                    "label": "家庭主妇",
+                    "value": "sel_h000"
+                  },
+                  {
+                    "label": "无业",
+                    "value": "sel_i000"
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "select"
+            },
+            {
+              "id": 22800520,
+              "name": "text_asset_census_register",
+              "label": "户籍概况",
+              "field_type": "select",
+              "category": "common",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_census_register_display",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "未了解",
+                    "value": "sel_a000"
+                  },
+                  {
+                    "label": "本地",
+                    "value": "sel_b000"
+                  },
+                  {
+                    "label": "本省",
+                    "value": "sel_c000"
+                  },
+                  {
+                    "label": "外省",
+                    "value": "sel_d000"
+                  },
+                  {
+                    "label": "其他",
+                    "value": "sel_e000"
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "select"
+            },
+            {
+              "id": 22800521,
+              "name": "text_asset_marriage_profile",
+              "label": "婚姻概况",
+              "field_type": "select",
+              "category": "common",
+              "position": 4,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_marriage_profile_display",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "未了解",
+                    "value": "sel_a000"
+                  },
+                  {
+                    "label": "已婚支持贷款",
+                    "value": "sel_b000"
+                  },
+                  {
+                    "label": "已婚不支持贷款",
+                    "value": "sel_c000"
+                  },
+                  {
+                    "label": "离异",
+                    "value": "sel_d000"
+                  },
+                  {
+                    "label": "未婚",
+                    "value": "sel_e000"
+                  },
+                  {
+                    "label": "丧偶",
+                    "value": "sel_f000"
+                  },
+                  {
+                    "label": "其他",
+                    "value": "sel_g000"
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "select"
+            },
+            {
+              "id": 22800522,
+              "name": "text_area_family_profile",
+              "label": "家庭概况",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 5,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_family_profile",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800523,
+              "name": "text_area_housing_profile",
+              "label": "房产概况",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 6,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_housing_profile",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800524,
+              "name": "text_area_vehicle_profile",
+              "label": "车辆概况",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 7,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_vehicle_profile",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800525,
+              "name": "text_area_policy_profile",
+              "label": "保单概况",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 8,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_area_policy_profile",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800526,
+              "name": "text_asset_credit_profile",
+              "label": "征信概况",
+              "field_type": "text_field",
+              "category": "common",
+              "position": 9,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "text_asset_credit_profile",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294940,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": true,
+              "field_type_option": "text_field"
+            }
+          ]
+        },
+        {
+          "id": 3294941,
+          "label": "其他信息",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 5,
+          "custom_fields": [
+            {
+              "id": 22800534,
+              "name": "status",
+              "label": "跟进状态",
+              "field_type": "field_map_field",
+              "category": "common",
+              "position": 1,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "status_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "初访",
+                    "value": 9298667
+                  },
+                  {
+                    "label": "意向",
+                    "value": 9298668
+                  },
+                  {
+                    "label": "报价",
+                    "value": 9298669
+                  },
+                  {
+                    "label": "成交",
+                    "value": 9298670
+                  },
+                  {
+                    "label": "暂时搁置",
+                    "value": 9298671
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            },
+            {
+              "id": 22800535,
+              "name": "industry",
+              "label": "所属行业",
+              "field_type": "field_map_field",
+              "category": "uncommon",
+              "position": 2,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "industry_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "服务",
+                    "value": 9298683
+                  },
+                  {
+                    "label": "金融",
+                    "value": 9298684
+                  },
+                  {
+                    "label": "电信",
+                    "value": 9298685
+                  },
+                  {
+                    "label": "教育",
+                    "value": 9298686
+                  },
+                  {
+                    "label": "高科技",
+                    "value": 9298687
+                  },
+                  {
+                    "label": "政府",
+                    "value": 9298688
+                  },
+                  {
+                    "label": "制造",
+                    "value": 9298689
+                  },
+                  {
+                    "label": "能源",
+                    "value": 9298690
+                  },
+                  {
+                    "label": "零售",
+                    "value": 9298691
+                  },
+                  {
+                    "label": "媒体",
+                    "value": 9298692
+                  },
+                  {
+                    "label": "娱乐",
+                    "value": 9298693
+                  },
+                  {
+                    "label": "咨询",
+                    "value": 9298694
+                  },
+                  {
+                    "label": "非盈利事业",
+                    "value": 9298695
+                  },
+                  {
+                    "label": "公用事业",
+                    "value": 9298696
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            },
+            {
+              "id": 22800536,
+              "name": "staff_size",
+              "label": "人员规模",
+              "field_type": "field_map_field",
+              "category": "uncommon",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "staff_size_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "请选择",
+                    "value": ""
+                  },
+                  {
+                    "label": "<10人",
+                    "value": 9298697
+                  },
+                  {
+                    "label": "10-20人",
+                    "value": 9298698
+                  },
+                  {
+                    "label": "20-50人",
+                    "value": 9298699
+                  },
+                  {
+                    "label": "50-100人",
+                    "value": 9298700
+                  },
+                  {
+                    "label": "100-500人",
+                    "value": 9298701
+                  },
+                  {
+                    "label": "500人以上",
+                    "value": 9298702
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            },
+            {
+              "id": 22800537,
+              "name": "revisit_remind_at",
+              "label": "下次跟进时间",
+              "field_type": "datetime_field",
+              "category": "uncommon",
+              "position": 4,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "revisit_remind_at",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "datetime_field"
+            },
+            {
+              "id": 22800538,
+              "name": "note",
+              "label": "备注",
+              "field_type": "text_area",
+              "category": "common",
+              "position": 5,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "note",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": false,
+              "category_readonly": false,
+              "status_readonly": false,
+              "base_columns_readonly": false,
+              "field_type_option": "text_area"
+            },
+            {
+              "id": 22800539,
+              "name": "channel",
+              "label": "渠道",
+              "field_type": "field_map_field",
+              "category": "system",
+              "position": 6,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "channel_mapped",
+              "input_field_options": {
+                "collection_options": [
+                  {
+                    "label": "无",
+                    "value": 9298703
+                  },
+                  {
+                    "label": "微信",
+                    "value": 9298704
+                  },
+                  {
+                    "label": "QQ",
+                    "value": 9298705
+                  },
+                  {
+                    "label": "微博",
+                    "value": 9298706
+                  },
+                  {
+                    "label": "百度",
+                    "value": 9298707
+                  }
+                ]
+              },
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294941,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "field_map_field"
+            }
+          ]
+        },
+        {
+          "id": 3294942,
+          "label": "系统信息",
+          "status": "enable",
+          "custom_field_setting_id": 1064438,
+          "position": 6,
+          "custom_fields": [
+            {
+              "id": 22800545,
+              "name": "user",
+              "label": "负责人",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 1,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "user.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800547,
+              "name": "creator",
+              "label": "创建人",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 3,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "creator.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800548,
+              "name": "before_user",
+              "label": "前负责人",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 4,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "before_user.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800549,
+              "name": "owned_department",
+              "label": "所属部门",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 5,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "owned_department.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800550,
+              "name": "before_owned_department",
+              "label": "前所属部门",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 6,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "before_owned_department.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800551,
+              "name": "before_customer_common_setting",
+              "label": "所属公海",
+              "field_type": "select2_field",
+              "category": "system",
+              "position": 7,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "before_customer_common_setting.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "select2_field"
+            },
+            {
+              "id": 22800552,
+              "name": "created_at",
+              "label": "创建时间",
+              "field_type": "datetime_field",
+              "category": "",
+              "position": 8,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "created_at",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "datetime_field"
+            },
+            {
+              "id": 22800553,
+              "name": "updated_at",
+              "label": "更新于",
+              "field_type": "datetime_field",
+              "category": "",
+              "position": 9,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "updated_at",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": true,
+              "cannot_add": true,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "datetime_field"
+            },
+            {
+              "id": 22800789,
+              "name": "custom_field_template",
+              "label": "业务类型",
+              "field_type": "text_field",
+              "category": "",
+              "position": 11,
+              "placeholder": null,
+              "label_html_options": {},
+              "custom_column_name": "custom_field_template.name",
+              "input_field_options": {},
+              "status": "enable",
+              "required": false,
+              "cannot_edit": false,
+              "cannot_add": false,
+              "custom_field_setting_id": 1064438,
+              "custom_field_group_id": 3294942,
+              "required_readonly": true,
+              "category_readonly": true,
+              "status_readonly": true,
+              "base_columns_readonly": false,
+              "field_type_option": "text_field"
+            }
+          ]
+        }
+      ],
+      "quick_edit": {
+        "all_data": false,
+        "has_edit_policy": true,
+        "has_approve_permission": false,
+        "editable_fields": [
+          {
+            "name": "name",
+            "field_type": "text_field",
+            "column_name": "name",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "company_name",
+            "field_type": "text_field",
+            "column_name": "company_name",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "category",
+            "field_type": "field_map_field",
+            "column_name": "category_mapped",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "source",
+            "field_type": "field_map_field",
+            "column_name": "source_mapped",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_loan_amount_required",
+            "field_type": "text_field",
+            "column_name": "text_asset_loan_amount_required",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "datetime_asset_loan_demand_at",
+            "field_type": "datetime_field",
+            "column_name": "datetime_asset_loan_demand_at",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.tel",
+            "field_type": "tel_field",
+            "column_name": "address.tel",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.phone",
+            "field_type": "mobile_field",
+            "column_name": "address.phone",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.wechat",
+            "field_type": "text_field",
+            "column_name": "address.wechat",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.qq",
+            "field_type": "text_field",
+            "column_name": "address.qq",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.wangwang",
+            "field_type": "text_field",
+            "column_name": "address.wangwang",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.email",
+            "field_type": "email_field",
+            "column_name": "address.email",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.fax",
+            "field_type": "text_field",
+            "column_name": "address.fax",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.url",
+            "field_type": "url_field",
+            "column_name": "address.url",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.detail_address",
+            "field_type": "geo_address_field",
+            "column_name": "address.detail_address",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "address.zip",
+            "field_type": "text_field",
+            "column_name": "address.zip",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "datetime_asset_interview_appointment",
+            "field_type": "datetime_field",
+            "column_name": "datetime_asset_interview_appointment",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_personal_profile",
+            "field_type": "multi_select",
+            "column_name": "text_asset_personal_profile_display",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_income_profile",
+            "field_type": "select",
+            "column_name": "text_asset_income_profile_display",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_census_register",
+            "field_type": "select",
+            "column_name": "text_asset_census_register_display",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_marriage_profile",
+            "field_type": "select",
+            "column_name": "text_asset_marriage_profile_display",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "text_asset_credit_profile",
+            "field_type": "text_field",
+            "column_name": "text_asset_credit_profile",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "status",
+            "field_type": "field_map_field",
+            "column_name": "status_mapped",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "industry",
+            "field_type": "field_map_field",
+            "column_name": "industry_mapped",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "staff_size",
+            "field_type": "field_map_field",
+            "column_name": "staff_size_mapped",
+            "is_show": true,
+            "editable": true
+          },
+          {
+            "name": "revisit_remind_at",
+            "field_type": "datetime_field",
+            "column_name": "revisit_remind_at",
+            "is_show": true,
+            "editable": true
+          }
+        ]
+      },
+      "query_fields": [
+        {
+          "label": "客户名称",
+          "name": "name"
+        },
+        {
+          "label": "公司名称",
+          "name": "company_name"
+        },
+        {
+          "label": "贷款需求金额",
+          "name": "text_asset_loan_amount_required"
+        },
+        {
+          "label": "电话",
+          "name": "address.tel"
+        },
+        {
+          "label": "手机",
+          "name": "address.phone"
+        },
+        {
+          "label": "微信号",
+          "name": "address.wechat"
+        },
+        {
+          "label": "QQ号",
+          "name": "address.qq"
+        },
+        {
+          "label": "旺旺号",
+          "name": "address.wangwang"
+        },
+        {
+          "label": "邮箱",
+          "name": "address.email"
+        },
+        {
+          "label": "传真",
+          "name": "address.fax"
+        },
+        {
+          "label": "网址",
+          "name": "address.url"
+        },
+        {
+          "label": "地址",
+          "name": "address.detail_address"
+        },
+        {
+          "label": "邮编",
+          "name": "address.zip"
+        },
+        {
+          "label": "征信概况",
+          "name": "text_asset_credit_profile"
+        }
+      ]
+    }
+  },
+  {
+    "id": 244564,
+    "name": "普通管理员",
+    "description": null,
+    "organization_id": 11514812,
+    "created_at": "2019-07-05T09:29:42.000+08:00",
+    "updated_at": "2019-07-17T11:15:27.696+08:00",
+    "settings": {
+      "default_role": true
+    },
+    "entity_grant_scope": "self_and_subordinate_department_own",
+    "field_permission_grant_scope": "all_data",
+    "fields_permission_display": {
+      "lead": {
+        "model_name": "线索",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "name",
+            "label": "姓名"
+          },
+          {
+            "edit": "1",
+            "status": "-1",
+            "name": "company_name",
+            "label": "公司名称"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "department",
+            "label": "部门"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "job",
+            "label": "职务"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_loan_amount_required",
+            "label": "贷款需求金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "datetime_asset_loan_demand_at",
+            "label": "贷款需求时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.tel",
+            "label": "电话"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.phone",
+            "label": "手机"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wechat",
+            "label": "微信号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.qq",
+            "label": "QQ号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wangwang",
+            "label": "旺旺号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.email",
+            "label": "邮箱"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.url",
+            "label": "网址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.region_info",
+            "label": "地区"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.detail_address",
+            "label": "地址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.zip",
+            "label": "邮编"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "status_mapped",
+            "label": "跟进状态"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "source_mapped",
+            "label": "线索来源"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "revisit_remind_at",
+            "label": "下次跟进时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "note",
+            "label": "备注"
+          }
+        ]
+      },
+      "customer": {
+        "model_name": "客户",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "name",
+            "label": "客户名称"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "category_mapped",
+            "label": "客户类型"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "source_mapped",
+            "label": "客户来源"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "parent.name",
+            "label": "上级客户"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_loan_amount_required",
+            "label": "贷款需求金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "datetime_asset_loan_demand_at",
+            "label": "贷款需求时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_loan_debt",
+            "label": "贷款负债"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_credit_card_debt",
+            "label": "信用卡负债"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.tel",
+            "label": "电话"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.phone",
+            "label": "手机"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wechat",
+            "label": "微信号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.qq",
+            "label": "QQ号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wangwang",
+            "label": "旺旺号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.email",
+            "label": "邮箱"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.fax",
+            "label": "传真"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.url",
+            "label": "网址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.region_info",
+            "label": "地区"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.detail_address",
+            "label": "地址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.zip",
+            "label": "邮编"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "datetime_asset_interview_appointment",
+            "label": "预约面谈时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_interview_feedback",
+            "label": "面谈反馈"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_personal_profile_display",
+            "label": "个人概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_income_profile_display",
+            "label": "收入概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_census_register_display",
+            "label": "户籍概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_marriage_profile_display",
+            "label": "婚姻概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_family_profile",
+            "label": "家庭概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_housing_profile",
+            "label": "房产概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_vehicle_profile",
+            "label": "车辆概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_area_policy_profile",
+            "label": "保单概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_credit_profile",
+            "label": "征信概况"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "status_mapped",
+            "label": "跟进状态"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "industry_mapped",
+            "label": "所属行业"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "staff_size_mapped",
+            "label": "人员规模"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "revisit_remind_at",
+            "label": "下次跟进时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "note",
+            "label": "备注"
+          }
+        ]
+      },
+      "contact": {
+        "model_name": "联系人",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "name",
+            "label": "姓名"
+          },
+          {
+            "edit": "-1",
+            "name": "customer.name",
+            "label": "对应客户"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "department",
+            "label": "部门"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "job",
+            "label": "职务"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.tel",
+            "label": "电话"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.phone",
+            "label": "手机"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wechat",
+            "label": "微信号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.qq",
+            "label": "QQ号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.wangwang",
+            "label": "旺旺号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.email",
+            "label": "邮箱"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.url",
+            "label": "网址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.region_info",
+            "label": "地区"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.detail_address",
+            "label": "地址"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "address.zip",
+            "label": "邮编"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "gender_i18n",
+            "label": "性别"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "birth_date",
+            "label": "生日"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "note",
+            "label": "备注"
+          }
+        ]
+      },
+      "contract": {
+        "model_name": "合同",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "title",
+            "label": "合同标题"
+          },
+          {
+            "edit": "-1",
+            "name": "customer.name",
+            "label": "对应客户"
+          },
+          {
+            "edit": "-1",
+            "name": "opportunity.title",
+            "label": "对应商机"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_assets",
+            "label": "关联产品"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "total_amount",
+            "label": "合同总金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_actual_approved",
+            "label": "实际批款金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "sign_date",
+            "label": "签约日期"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "start_at",
+            "label": "合同开始日期"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "end_at",
+            "label": "合同结束日期"
+          },
+          {
+            "status": "-1",
+            "name": "checking_payments_amount",
+            "label": "已开票金额"
+          },
+          {
+            "status": "-1",
+            "name": "received_payments_amount",
+            "label": "已回款金额"
+          },
+          {
+            "status": "-1",
+            "name": "unreceived_amount",
+            "label": "未回款金额"
+          },
+          {
+            "status": "-1",
+            "name": "unchecking_payments_amount",
+            "label": "未开票金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "status_mapped",
+            "label": "合同状态"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "sn",
+            "label": "合同编号"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "category_mapped",
+            "label": "合同类型"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "payment_type_mapped",
+            "label": "付款方式"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "customer_signer",
+            "label": "客户方签约人"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "our_signer",
+            "label": "我方签约人"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "special_terms",
+            "label": "备注"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_01ee47",
+            "label": "合同备注"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.standard_unit_price",
+            "label": "[关联产品]标准单价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.recommended_unit_price",
+            "label": "[关联产品]售价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.quantity",
+            "label": "[关联产品]数量"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.discount",
+            "label": "[关联产品]折扣"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.total_price",
+            "label": "[关联产品]总价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.remark",
+            "label": "[关联产品]备注"
+          }
+        ]
+      },
+      "opportunity": {
+        "model_name": "商机",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "title",
+            "label": "商机标题"
+          },
+          {
+            "edit": "-1",
+            "name": "customer.name",
+            "label": "对应客户"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_charge_proportion",
+            "label": "收费比例"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "contact_assetships",
+            "label": "关联联系人"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_assets",
+            "label": "关联产品"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "expect_amount",
+            "label": "预计销售金额"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "expect_sign_date",
+            "label": "预计签单日期"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "stage_mapped",
+            "label": "销售阶段"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "kind_mapped",
+            "label": "商机类型"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "get_time",
+            "label": "商机获取日期"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "source_mapped",
+            "label": "商机来源"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "revisit_remind_at",
+            "label": "下次跟进时间"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "note",
+            "label": "备注"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.standard_unit_price",
+            "label": "[关联产品]标准单价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.recommended_unit_price",
+            "label": "[关联产品]售价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.quantity",
+            "label": "[关联产品]数量"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.discount",
+            "label": "[关联产品]折扣"
+          },
+          {
+            "status": "-1",
+            "name": "product_asset.total_price",
+            "label": "[关联产品]总价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "product_asset.remark",
+            "label": "[关联产品]备注"
+          }
+        ]
+      },
+      "product": {
+        "model_name": "产品",
+        "setting": [
+          {
+            "edit": "-1",
+            "name": "name",
+            "label": "产品名称"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "standard_unit_price",
+            "label": "标准单价"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "unit_cost",
+            "label": "单位成本"
+          },
+          {
+            "status": "-1",
+            "name": "gross_margin",
+            "label": "毛利率"
+          },
+          {
+            "edit": "-1",
+            "status": "-1",
+            "name": "text_asset_spec_display",
+            "label": "规格"
+          }
+        ]
+      }
+    },
+    "field_permission_setting": {
+      "lead": [
+        {
+          "name": "name",
+          "edit": "-1"
+        },
+        {
+          "name": "company_name",
+          "status": "-1",
+          "edit": "1"
+        },
+        {
+          "name": "department",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "job",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_loan_amount_required",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "datetime_asset_loan_demand_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.tel",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.phone",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wechat",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.qq",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wangwang",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.email",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.url",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.region_info",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.detail_address",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.zip",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "status_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "source_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "revisit_remind_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "note",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ],
+      "contact": [
+        {
+          "name": "name",
+          "edit": "-1"
+        },
+        {
+          "name": "customer.name",
+          "edit": "-1"
+        },
+        {
+          "name": "department",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "job",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.tel",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.phone",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wechat",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.qq",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wangwang",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.email",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.url",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.region_info",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.detail_address",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.zip",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "gender_i18n",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "birth_date",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "note",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ],
+      "customer": [
+        {
+          "name": "name",
+          "edit": "-1"
+        },
+        {
+          "name": "category_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "source_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "parent.name",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_loan_amount_required",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "datetime_asset_loan_demand_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_loan_debt",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_credit_card_debt",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.tel",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.phone",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wechat",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.qq",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.wangwang",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.email",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.fax",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.url",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.region_info",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.detail_address",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "address.zip",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "datetime_asset_interview_appointment",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_interview_feedback",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_personal_profile_display",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_income_profile_display",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_census_register_display",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_marriage_profile_display",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_family_profile",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_housing_profile",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_vehicle_profile",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_area_policy_profile",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_credit_profile",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "status_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "industry_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "staff_size_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "revisit_remind_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "note",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ],
+      "opportunity": [
+        {
+          "name": "title",
+          "edit": "-1"
+        },
+        {
+          "name": "customer.name",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_charge_proportion",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "contact_assetships",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_assets",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "expect_amount",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "expect_sign_date",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "stage_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "kind_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "get_time",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "source_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "revisit_remind_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "note",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.standard_unit_price",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.recommended_unit_price",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.quantity",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.discount",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.total_price",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.remark",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ],
+      "contract": [
+        {
+          "name": "title",
+          "edit": "-1"
+        },
+        {
+          "name": "customer.name",
+          "edit": "-1"
+        },
+        {
+          "name": "opportunity.title",
+          "edit": "-1"
+        },
+        {
+          "name": "product_assets",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "total_amount",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_actual_approved",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "sign_date",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "start_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "end_at",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "checking_payments_amount",
+          "status": "-1"
+        },
+        {
+          "name": "received_payments_amount",
+          "status": "-1"
+        },
+        {
+          "name": "unreceived_amount",
+          "status": "-1"
+        },
+        {
+          "name": "unchecking_payments_amount",
+          "status": "-1"
+        },
+        {
+          "name": "status_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "sn",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "category_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "payment_type_mapped",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "customer_signer",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "our_signer",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "special_terms",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "text_asset_01ee47",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.standard_unit_price",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.recommended_unit_price",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.quantity",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "product_asset.discount",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.total_price",
+          "status": "-1"
+        },
+        {
+          "name": "product_asset.remark",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ],
+      "product": [
+        {
+          "name": "name",
+          "edit": "-1"
+        },
+        {
+          "name": "standard_unit_price",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "unit_cost",
+          "status": "-1",
+          "edit": "-1"
+        },
+        {
+          "name": "gross_margin",
+          "status": "-1"
+        },
+        {
+          "name": "text_asset_spec_display",
+          "status": "-1",
+          "edit": "-1"
+        }
+      ]
+    },
+    "permissions": [
+      {
+        "id": 1,
+        "name": "编辑客户资料",
+        "subject": "customer",
+        "action": "edit",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 2,
+        "name": "查看客户资料",
+        "subject": "customer",
+        "action": "show",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 4,
+        "name": "创建客户",
+        "subject": "customer",
+        "action": "create",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 54,
+        "name": "导入客户",
+        "subject": "customer",
+        "action": "import",
+        "created_at": "2014-12-29T19:39:41.000+08:00",
+        "updated_at": "2014-12-29T19:39:41.000+08:00"
+      },
+      {
+        "id": 84,
+        "name": "转移客户给他人",
+        "subject": "customer",
+        "action": "transfer",
+        "created_at": "2015-05-13T20:50:19.000+08:00",
+        "updated_at": "2015-05-13T20:50:19.000+08:00"
+      },
+      {
+        "id": 5,
+        "name": "编辑联系人资料",
+        "subject": "contact",
+        "action": "edit",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 6,
+        "name": "查看联系人资料",
+        "subject": "contact",
+        "action": "show",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 8,
+        "name": "创建联系人",
+        "subject": "contact",
+        "action": "create",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 56,
+        "name": "导入联系人",
+        "subject": "contact",
+        "action": "import",
+        "created_at": "2014-12-29T19:39:41.000+08:00",
+        "updated_at": "2014-12-29T19:39:41.000+08:00"
+      },
+      {
+        "id": 9,
+        "name": "编辑商机资料",
+        "subject": "opportunity",
+        "action": "edit",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 10,
+        "name": "查看商机资料",
+        "subject": "opportunity",
+        "action": "show",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 12,
+        "name": "创建商机",
+        "subject": "opportunity",
+        "action": "create",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 94,
+        "name": "导入商机",
+        "subject": "opportunity",
+        "action": "import",
+        "created_at": "2015-08-25T20:13:30.000+08:00",
+        "updated_at": "2015-08-25T20:13:30.000+08:00"
+      },
+      {
+        "id": 85,
+        "name": "转移商机给他人",
+        "subject": "opportunity",
+        "action": "transfer",
+        "created_at": "2015-05-13T20:50:19.000+08:00",
+        "updated_at": "2015-05-13T20:50:19.000+08:00"
+      },
+      {
+        "id": 38,
+        "name": "编辑销售线索资料",
+        "subject": "lead",
+        "action": "edit",
+        "created_at": "2014-08-02T16:36:06.000+08:00",
+        "updated_at": "2014-08-02T16:36:06.000+08:00"
+      },
+      {
+        "id": 41,
+        "name": "创建销售线索",
+        "subject": "lead",
+        "action": "create",
+        "created_at": "2014-08-02T16:36:06.000+08:00",
+        "updated_at": "2014-08-02T16:36:06.000+08:00"
+      },
+      {
+        "id": 59,
+        "name": "导入线索",
+        "subject": "lead",
+        "action": "import",
+        "created_at": "2014-12-29T19:39:41.000+08:00",
+        "updated_at": "2014-12-29T19:39:41.000+08:00"
+      },
+      {
+        "id": 121,
+        "name": "转成客户",
+        "subject": "lead",
+        "action": "turn_to_customer",
+        "created_at": "2017-03-22T21:35:59.000+08:00",
+        "updated_at": "2017-03-22T21:35:59.000+08:00"
+      },
+      {
+        "id": 86,
+        "name": "转移线索给他人",
+        "subject": "lead",
+        "action": "transfer",
+        "created_at": "2015-05-13T20:50:19.000+08:00",
+        "updated_at": "2015-05-13T20:50:19.000+08:00"
+      },
+      {
+        "id": 13,
+        "name": "编辑合同资料",
+        "subject": "contract",
+        "action": "edit",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 14,
+        "name": "查看合同资料",
+        "subject": "contract",
+        "action": "show",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 16,
+        "name": "创建合同",
+        "subject": "contract",
+        "action": "create",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2014-07-23T18:43:54.000+08:00"
+      },
+      {
+        "id": 87,
+        "name": "转移合同给他人",
+        "subject": "contract",
+        "action": "transfer",
+        "created_at": "2015-05-13T20:50:19.000+08:00",
+        "updated_at": "2015-05-13T20:50:19.000+08:00"
+      },
+      {
+        "id": 119,
+        "name": "发送短信",
+        "subject": "sms",
+        "action": "send",
+        "created_at": "2017-03-14T22:17:16.000+08:00",
+        "updated_at": "2017-03-14T22:17:16.000+08:00"
+      },
+      {
+        "id": 123,
+        "name": "签名设置",
+        "subject": "sms_identity",
+        "action": "crud",
+        "created_at": "2017-04-14T19:13:00.000+08:00",
+        "updated_at": "2017-04-14T19:13:00.000+08:00"
+      },
+      {
+        "id": 124,
+        "name": "限额配置",
+        "subject": "sms_quota",
+        "action": "crud",
+        "created_at": "2017-04-14T19:13:00.000+08:00",
+        "updated_at": "2017-04-14T19:13:00.000+08:00"
+      },
+      {
+        "id": 125,
+        "name": "新增模板",
+        "subject": "sms_template",
+        "action": "create",
+        "created_at": "2017-04-14T19:13:00.000+08:00",
+        "updated_at": "2017-04-14T19:13:00.000+08:00"
+      },
+      {
+        "id": 126,
+        "name": "删除模板",
+        "subject": "sms_template",
+        "action": "delete",
+        "created_at": "2017-04-14T19:13:00.000+08:00",
+        "updated_at": "2017-04-14T19:13:00.000+08:00"
+      },
+      {
+        "id": 129,
+        "name": "配置回款计划",
+        "subject": "received_payment_plan",
+        "action": "crud",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 132,
+        "name": "查看回款记录",
+        "subject": "received_payment",
+        "action": "show",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 133,
+        "name": "新增回款记录",
+        "subject": "received_payment",
+        "action": "create",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 134,
+        "name": "编辑回款记录",
+        "subject": "received_payment",
+        "action": "edit",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 135,
+        "name": "删除回款记录",
+        "subject": "received_payment",
+        "action": "destroy",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 136,
+        "name": "导入回款记录",
+        "subject": "received_payment",
+        "action": "import",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 138,
+        "name": "查看开票记录",
+        "subject": "invoiced_payment",
+        "action": "show",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 139,
+        "name": "新增开票记录",
+        "subject": "invoiced_payment",
+        "action": "create",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 140,
+        "name": "编辑开票记录",
+        "subject": "invoiced_payment",
+        "action": "edit",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 141,
+        "name": "删除开票记录",
+        "subject": "invoiced_payment",
+        "action": "destroy",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 142,
+        "name": "导入开票记录",
+        "subject": "invoiced_payment",
+        "action": "import",
+        "created_at": "2017-06-20T22:09:11.000+08:00",
+        "updated_at": "2017-06-20T22:09:11.000+08:00"
+      },
+      {
+        "id": 159,
+        "name": "订阅/取消风险信息",
+        "subject": "business_query_subscription",
+        "action": "subscription",
+        "created_at": "2017-10-18T20:44:27.000+08:00",
+        "updated_at": "2017-10-18T20:44:27.000+08:00"
+      },
+      {
+        "id": 160,
+        "name": "查看风险信息",
+        "subject": "business_query_subscription",
+        "action": "show",
+        "created_at": "2017-10-18T20:44:27.000+08:00",
+        "updated_at": "2017-10-18T20:44:27.000+08:00"
+      },
+      {
+        "id": 30,
+        "name": "自定义业务参数设置",
+        "subject": "field_map",
+        "action": "crud",
+        "created_at": "2014-07-23T18:43:54.000+08:00",
+        "updated_at": "2015-11-26T18:42:53.000+08:00"
+      },
+      {
+        "id": 82,
+        "name": "导入至客户公海",
+        "subject": "settings",
+        "action": "import_customer_common",
+        "created_at": "2015-04-30T18:44:14.000+08:00",
+        "updated_at": "2015-04-30T18:44:14.000+08:00"
+      },
+      {
+        "id": 50,
+        "name": "客户公海设置",
+        "subject": "settings",
+        "action": "customer",
+        "created_at": "2014-11-20T17:43:17.000+08:00",
+        "updated_at": "2014-11-20T17:43:17.000+08:00"
+      },
+      {
+        "id": 83,
+        "name": "转移至客户公海",
+        "subject": "settings",
+        "action": "turn_customer_common",
+        "created_at": "2015-04-30T18:44:14.000+08:00",
+        "updated_at": "2015-04-30T18:44:14.000+08:00"
+      },
+      {
+        "id": 109,
+        "name": "查看客户公海",
+        "subject": "settings",
+        "action": "show_customer_common",
+        "created_at": "2016-06-12T16:29:46.000+08:00",
+        "updated_at": "2016-06-12T16:29:46.000+08:00"
+      },
+      {
+        "id": 168,
+        "name": "线索池设置",
+        "subject": "settings",
+        "action": "lead",
+        "created_at": "2018-08-08T23:59:33.000+08:00",
+        "updated_at": "2018-08-08T23:59:33.000+08:00"
+      },
+      {
+        "id": 43,
+        "name": "公告设置",
+        "subject": "announcement",
+        "action": "crud",
+        "created_at": "2014-08-26T20:39:00.000+08:00",
+        "updated_at": "2015-11-26T18:42:54.000+08:00"
+      },
+      {
+        "id": 63,
+        "name": "查看产品",
+        "subject": "product",
+        "action": "show",
+        "created_at": "2014-12-29T19:39:42.000+08:00",
+        "updated_at": "2014-12-29T19:39:42.000+08:00"
+      },
+      {
+        "id": 62,
+        "name": "查看角色",
+        "subject": "role",
+        "action": "show",
+        "created_at": "2014-12-29T19:39:41.000+08:00",
+        "updated_at": "2014-12-29T19:39:41.000+08:00"
+      },
+      {
+        "id": 77,
+        "name": "查看业务目标",
+        "subject": "business_goal",
+        "action": "show",
+        "created_at": "2014-12-29T19:39:42.000+08:00",
+        "updated_at": "2014-12-29T19:39:42.000+08:00"
+      },
+      {
+        "id": 102,
+        "name": "导入跟进记录",
+        "subject": "revisit_log",
+        "action": "import",
+        "created_at": "2015-11-26T18:42:53.000+08:00",
+        "updated_at": "2015-11-26T18:42:53.000+08:00"
+      },
+      {
+        "id": 52,
+        "name": "报表中心",
+        "subject": "report_center",
+        "action": "show",
+        "created_at": "2014-12-08T21:04:21.000+08:00",
+        "updated_at": "2014-12-08T21:04:21.000+08:00"
+      },
+      {
+        "id": 39,
+        "name": "查看销售线索资料",
+        "subject": "lead",
+        "action": "show",
+        "created_at": "2014-08-02T16:36:06.000+08:00",
+        "updated_at": "2014-08-02T16:36:06.000+08:00"
+      },
+      {
+        "id": 60,
+        "name": "导出线索",
+        "subject": "lead",
+        "action": "export",
+        "created_at": "2014-12-29T19:39:41.000+08:00",
+        "updated_at": "2014-12-29T19:39:41.000+08:00"
+      }
+    ]
+  }
+]

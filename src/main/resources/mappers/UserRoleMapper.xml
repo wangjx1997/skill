@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="wjx.skill.model.UserRole">
+        <result column="user_id" property="userid" jdbcType="INTEGER"/>
+        <result column="role_id" property="roleid" jdbcType="INTEGER"/>
+    </resultMap>
+    <insert id="insert" parameterType="wjx.skill.model.UserRole">
+        insert into user_role (user_id, role_id,create_time)
+        values
+        <foreach collection="roleIds" separator="," item="roleid">
+            (#{userid}, #{roleid},now())
+        </foreach>
+    </insert>
+    <update id="update" parameterType="wjx.skill.model.UserRole">
+    UPDATE `user_role` SET role_id=#{roleid}  WHERE user_id = #{userid}
+  </update>
+    <delete id="remove" parameterType="java.lang.Integer">
+    DELETE FROM `user_role` WHERE user_id=#{userId}
+  </delete>
+
+    <select id="se" resultType="wjx.skill.model.Pro">
+      SELECT id,parent_number as parent_id,province as province_name,sort FROM `skill`.`t_province1` WHERE parent_number = #{parent_number}
+    </select>
+    
+    <insert id="ins" >
+        INSERT INTO t_province(parent_number,province_number,province_name,sort)
+        VALUES
+        <foreach collection="pro" item="item" separator=",">
+            (#{item.parent_number},#{item.province_number},#{item.province_name},#{item.sort})
+        </foreach>
+    </insert>
+</mapper>

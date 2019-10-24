@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.SkillMapper">
+
+    <resultMap id="BaseResultMap2" type="wjx.skill.model.Skill">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="user_id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="html_content" property="htmlContent" jdbcType="VARCHAR"/>
+        <result column="read_size" property="readSize" jdbcType="INTEGER"/>
+        <result column="comment_size" property="commentSize" jdbcType="INTEGER"/>
+        <result column="vote_size" property="voteSize" jdbcType="INTEGER"/>
+        <result column="catalog_id" property="catalog_id" jdbcType="INTEGER"/>
+        <result column="tags" property="tags" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="BaseResultMap" type="wjx.skill.dto.SkillDto">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_id" property="user_id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="html_content" property="htmlContent" jdbcType="VARCHAR"/>
+        <result column="read_size" property="readSize" jdbcType="INTEGER"/>
+        <result column="comment_size" property="commentSize" jdbcType="INTEGER"/>
+        <result column="vote_size" property="voteSize" jdbcType="INTEGER"/>
+        <result column="catalog_id" property="catalog_id" jdbcType="INTEGER"/>
+        <result column="tags" property="tags" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="TagMap" type="wjx.skill.vo.TagVO">
+        <result column="tag" property="name" jdbcType="VARCHAR"/>
+        <result column="hot" property="count" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--获取总数-->
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(0) FROM `skill_article` where user_id = #{user_id}
+        <if test="title != null and title !='' ">
+            AND title like concat('%', #{title}, '%')
+            AND summary like concat('%', #{title}, '%')
+            AND content like concat('%', #{title}, '%')
+        </if>
+        <if test="catalogId != null and catalogId !='' ">
+            AND catalog_id = #{catalogId}
+        </if>
+    </select>
+
+    <!--保存文章-->
+    <insert id="saveBlog" useGeneratedKeys="true" keyProperty="id" parameterType="wjx.skill.model.Skill">
+        INSERT INTO skill_article(id,title,html_content,summary,content,tags,read_size,comment_size,vote_size,catalog_id,user_id,create_time)
+        VALUES
+        (#{id},#{title},#{htmlContent},#{summary},#{content},#{tags},0,0,0,#{catalog_id},#{user_id},now())
+    </insert>
+    <!--删除-->
+    <delete id="removeBlog" parameterType="java.lang.Integer">
+        DELETE FROM `skill_article` WHERE id=#{id}
+    </delete>
+    <!--更新-->
+    <update id="updateBlog" parameterType="wjx.skill.model.Skill">
+        UPDATE `skill_article`
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="summary != null">
+                summary = #{summary},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="htmlContent != null">
+                html_content = #{htmlContent},
+            </if>
+            <if test="readSize != null">
+                read_size = #{readSize},
+            </if>
+            <if test="commentSize != null">
+                comment_size = #{commentSize},
+            </if>
+            <if test="voteSize != null">
+                vote_size = #{voteSize},
+            </if>
+            <if test="catalog_id != null">
+                catalog_id = #{catalog_id},
+            </if>
+            <if test="tags != null">
+                tags = #{tags}
+            </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+    <!--根据id查询文章-->
+    <select id="getByCatalogId" resultMap="BaseResultMap2">
+        select * FROM `skill_article` where catalog_id = #{catalogId} AND user_id=#{userId}
+    </select>
+    <!--根据id查询文章-->
+    <select id="getBlogById" resultMap="BaseResultMap2">
+        select * FROM `skill_article` where id = #{id}
+    </select>
+    <!--根据id查询文章-->
+    <select id="getSkillById" resultMap="BaseResultMap">
+        select * FROM `skill_article` where id = #{id}
+    </select>
+    <!--最新分页查询-->
+    <select id="listSkillsByTitleLike" resultMap="BaseResultMap">
+        select * FROM `skill_article` where user_id = #{user_id}
+        <if test="title != null and title !='' ">
+            AND title like concat('%', #{title}, '%')
+            AND summary like concat('%', #{title}, '%')
+            AND content like concat('%', #{title}, '%')
+            AND tags like concat('%', #{title}, '%')
+        </if>
+        ORDER BY create_time DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+    <!--最热分页查询-->
+    <select id="listSkillsByTitleLikeAndSort" resultMap="BaseResultMap">
+        select * FROM `skill_article` where user_id = #{user_id}
+        <if test="title != null and title !='' ">
+            AND title like concat('%', #{title}, '%')
+            AND summary like concat('%', #{title}, '%')
+            AND content like concat('%', #{title}, '%')
+            AND tags like concat('%', #{title}, '%')
+        </if>
+        ORDER BY CONCAT(`vote_size`,`read_size`,`comment_size`) DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+    <!--分类查询-->
+    <select id="listSkillsByCatalog" resultMap="BaseResultMap">
+        select * FROM `skill_article` where  user_id = #{user_id}
+        AND catalog_id=#{catalogId}
+        ORDER BY create_time DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+<!--    &lt;!&ndash;根据userName查询user&ndash;&gt;
+    <select id="findByUserName" resultMap="BaseResultMap">
+        select * FROM `skill_user` where user_name = #{username} and is_delete=1
+    </select>
+    &lt;!&ndash;查询全部&ndash;&gt;
+    <select id="listUsers" resultMap="BaseResultMap">
+        select * FROM `skill_user`
+    </select>-->
+    <insert id="saveTags">
+        INSERT INTO `skill_tag`(tag,article_id) VALUES
+        <foreach collection="tags" separator="," item="item">
+            (#{item},#{articleId})
+        </foreach>
+    </insert>
+    <delete id="deleteByArticleId" parameterType="java.lang.Integer">
+        DELETE FROM `skill_tag` WHERE article_id = #{articleId}
+    </delete>
+    <select id="countTags" resultMap="TagMap">
+        SELECT tag,COUNT(id) as hot FROM skill_tag GROUP BY tag ORDER BY hot DESC LIMIT 0,30
+    </select>
+</mapper>

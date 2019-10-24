@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.TestMapper">
+    <insert id="insert" parameterType="wjx.skill.model.ListedCompany">
+        insert into t_listed_company (company_name, listed_type,company_desc, es_number, province, city)
+        values(#{company_name}, #{stockType}, #{company_desc}, #{es_number}, #{province}, #{city})
+
+    </insert>
+</mapper>

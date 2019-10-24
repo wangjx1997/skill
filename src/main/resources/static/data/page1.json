@@ -1,0 +1,141 @@
+{
+  "empty": false,
+  "model": {
+    "userModel": {
+      "page": {
+        "content": [
+          {
+            "email": "fqqqa@qq.com",
+            "id": 6,
+            "name": "qw",
+            "password": "qqqq",
+            "username": "qq"
+          },
+          {
+            "email": "afas@qq.com",
+            "id": 5,
+            "name": "afsf",
+            "password": "afds",
+            "username": "afsf"
+          },
+          {
+            "email": "afsf@qq.com",
+            "id": 3,
+            "name": "saffasf",
+            "password": "addsad",
+            "username": "fsafsaf"
+          },
+          {
+            "email": "fa@qq.com",
+            "id": 4,
+            "name": "adsg",
+            "password": "addfs",
+            "username": "fsafasf"
+          },
+          {
+            "email": "fahfgh@qq.com",
+            "id": 7,
+            "name": "hdfh",
+            "password": "hdfh",
+            "username": "dhfgh"
+          },
+          {
+            "email": "dhggggg@qq.com",
+            "id": 8,
+            "name": "gggggg",
+            "password": "gggggggggggg",
+            "username": "dfhgh"
+          },
+          {
+            "email": "wjx0@qq.com",
+            "id": 9,
+            "name": "wjx",
+            "password": "123456",
+            "username": "皮皮皮0"
+          },
+          {
+            "email": "wjx1@qq.com",
+            "id": 10,
+            "name": "wjx",
+            "password": "123456",
+            "username": "皮皮皮1"
+          },
+          {
+            "email": "wjx2@qq.com",
+            "id": 11,
+            "name": "wjx",
+            "password": "123456",
+            "username": "皮皮皮2"
+          },
+          {
+            "email": "wjx3@qq.com",
+            "id": 12,
+            "name": "wjx",
+            "password": "123456",
+            "username": "皮皮皮3"
+          }
+        ],
+        "empty": false,
+        "first": true,
+        "last": false,
+        "number": 0,
+        "numberOfElements": 10,
+        "pageable": {
+          "offset": 0,
+          "pageNumber": 0,
+          "pageSize": 10,
+          "paged": true,
+          "sort": {
+            "empty": true,
+            "sorted": false,
+            "unsorted": true
+          },
+          "unpaged": false
+        },
+        "size": 10,
+        "sort": {
+          "$ref": "$.model.userModel.page.pageable.sort"
+        },
+        "totalElements": 26,
+        "totalPages": 3
+      },
+      "userList": [
+        {
+          "$ref": "$.model.userModel.page.content[0]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[1]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[2]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[3]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[4]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[5]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[6]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[7]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[8]"
+        },
+        {
+          "$ref": "$.model.userModel.page.content[9]"
+        }
+      ]
+    }
+  },
+  "modelMap": {
+    "$ref": "$.model"
+  },
+  "reference": true,
+  "viewName": "users/list"
+}

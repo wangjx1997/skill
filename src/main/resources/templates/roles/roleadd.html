@@ -1,0 +1,21 @@
+<div class="container">
+
+    <form th:action="@{/roles}" method="post" th:object="${roleModel.roles}" id="roleForm">
+        <input type="hidden" name="id" th:value="*{id}">
+        <div class="form-group">
+            <label for="roleName" class="col-form-label">角色名称</label>
+            <input type="text" class="form-control" id="roleName" name="roleName" th:value="*{roleName}" maxlength="20"
+                   placeholder="请输入角色名称，至少2个字符，至多20个">
+        </div>
+        <div class="form-group">
+            <label for="permissions" class="col-form-label">权限列表</label>
+            <input type="checkbox" id="checkAll"/>全选<br>
+            <div th:each="resource : ${roleModel.resources}" class="form-control">
+                <input type="checkbox"  id="permissions" name="permissions" th:value="${resource.id}">[[${resource.name}]]
+            </div>
+        </div>
+    </form>
+
+</div>
+<!-- /.container -->
+<script src="../../js/admins/check.js" th:src="@{/js/admins/check.js}"></script>

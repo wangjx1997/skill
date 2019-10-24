@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.CommentMapper" >
+  <resultMap id="BaseResultMap" type="wjx.skill.model.Comment" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="user_id" jdbcType="INTEGER" />
+    <result column="article_id" property="article_id" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+  </resultMap>
+  <!--添加评论-->
+  <insert id="createComment" useGeneratedKeys="true" keyProperty="id" parameterType="wjx.skill.model.Comment" >
+    insert into skill_comment (user_id, article_id,content,create_time)
+    values (#{user_id}, #{article_id}, #{content},now())
+  </insert>
+  <!--根据评论id获取-->
+  <select id="getCommentById" resultMap="BaseResultMap">
+    select * FROM`skill_comment` where id = #{id}
+  </select>
+  <!--根据文章id获取-->
+  <select id="listCommentById" resultMap="BaseResultMap">
+    select * FROM`skill_comment` where article_id = #{articleId}
+  </select>
+  <!--删除评论-->
+  <delete id="removeComment" parameterType="java.lang.Integer">
+    DELETE FROM `skill_comment` WHERE id = #{id}
+  </delete>
+  <delete id="removeByArticleId" parameterType="java.lang.Integer">
+    DELETE FROM `skill_comment` WHERE article_id = #{article_id}
+  </delete>
+</mapper>

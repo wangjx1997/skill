@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wjx.skill.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="wjx.skill.model.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="user_name" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_name, password,name,create_time
+    </sql>
+
+    <!--根据userName查询user-->
+    <select id="findByUserName" resultMap="BaseResultMap">
+        select * FROM `skill_user` where user_name = #{username} and is_delete=1
+    </select>
+
+
+    <!--根据userName查询头像-->
+    <select id="getAvatarById" resultType="java.lang.String">
+        select avatar FROM `skill_user` where user_name = #{userName}
+    </select>
+    <!--<select id="get" resultType="java.lang.String">
+        select * from skill_user su
+        left join user_role ur on su.id = ur.user_id
+        left join skill_role sr on ur.role_id = sr.id
+        left join role_resources rr on sr.id = rr.role_id
+        LEFT JOIN skill_resources ss on rr.resources_id = ss.id
+        where user_name = #{userName}
+    </select>-->
+
+    <!--根据userNameList查询user-->
+    <select id="listUsersByUserNames" parameterType="java.util.List" resultMap="BaseResultMap">
+        select user_name,avatar FROM `skill_user` where user_name in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        and is_delete=1
+    </select>
+
+    <!--根据id查询user-->
+    <select id="getUserById" resultMap="BaseResultMap">
+        select * FROM `skill_user` where id = #{id} and is_delete=1
+    </select>
+
+    <!--查询全部-->
+    <select id="listUsers" resultMap="BaseResultMap">
+        select * FROM `skill_user`
+    </select>
+
+    <!--分页查询-->
+    <select id="listUsersByNameLike" parameterType="wjx.skill.dto.PageDto" resultMap="BaseResultMap">
+        select * FROM `skill_user` where is_delete=1 AND user_name &lt;&gt; 'wjx_admin'
+        <if test="username != null and username !='' ">
+            AND user_name like concat('%', #{username}, '%')
+        </if>
+        ORDER BY create_time DESC
+        LIMIT #{from},#{pageSize}
+    </select>
+
+    <!--获取总数-->
+    <select id="getTotal" resultType="java.lang.Integer">
+        select count(0) FROM `skill_user` where is_delete=1 AND user_name &lt;&gt; 'wjx_admin'
+        <if test="username != null and username !='' ">
+            AND user_name like concat('%', #{username}, '%')
+        </if>
+    </select>
+    <!--添加用户-->
+    <insert id="saveUser" useGeneratedKeys="true" keyProperty="id" parameterType="wjx.skill.model.User">
+        INSERT INTO skill_user(id,name,is_delete,email,user_name,password,avatar,create_time)
+        VALUES
+        (#{id},#{name},1,#{email},#{username},#{password},#{avatar},now())
+    </insert>
+    <!--更新-->
+    <update id="updateUser" parameterType="wjx.skill.model.User">
+        UPDATE `skill_user`
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="password != null and password !=''">
+                password = #{password},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar}
+            </if>
+        </set>
+        WHERE user_name = #{username}
+    </update>
+    <!--删除-->
+    <delete id="removeUser" parameterType="java.lang.Integer">
+        DELETE FROM `skill_user` WHERE id=#{id}
+    </delete>
+</mapper>
