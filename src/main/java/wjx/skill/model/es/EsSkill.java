@@ -26,7 +26,7 @@ public class EsSkill implements Serializable {
 
     private String tags;  // 标签
 
-    protected EsSkill() {  // JPA 的规范要求无参构造函数；设为 protected 防止直接使用
+    protected EsSkill() {  // JPA的规范要求无参构造函数；设为 protected 防止直接使用
     }
 
     public EsSkill(String title, String content) {
